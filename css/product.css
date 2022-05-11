@@ -1,0 +1,424 @@
+
+/* Add Old CSS */
+:root{
+    --main-color:#443;
+    --border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95%/95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 65%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+
+section{
+    padding:1rem 9%;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.heading{
+  font-size: 5rem;
+  text-align: center;
+    /*font-size: 6.5rem;
+    color: #696969;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none;
+    position: relative;*/
+}
+
+.empheading{
+  font-size: 5rem;
+  text-align: center;
+  padding-top: 0rem;
+}
+
+.heading span{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color:var(--main-color);
+    font-size: 3rem;
+}
+
+.btn{
+    display: inline-block;
+    padding:.9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color:var(--main-color);
+    background: none;
+    border:var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border:var(--border-hover);
+}
+
+
+header{
+  position: fixed;
+  top:0; left: 0; right:0;
+  background-color: #E8E8E8;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0.5rem 9%;
+}
+
+header .logo{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color:Black;
+  text-transform: uppercase;
+}
+
+header .logo span{
+  color:#696969;
+}
+
+header .navbar a{
+  color:black;
+  font-size: 2rem;
+  margin:0 .8rem;
+}
+
+header .navbar a:hover{
+  font-size: 2.4rem;
+}
+
+header .icons i{
+  font-size: 2.5rem;
+  color:Black;
+  cursor: pointer;
+}
+
+header .icons i:hover{
+  color:#696969;
+}
+
+header .search-bar-container{
+  position: absolute;
+  top:100%; left: 5%; right:5%;
+  padding:1.5rem 2rem;
+  background:white;
+  border-top: .1rem solid Black;
+  border-bottom: .1rem solid Black;
+  border-right: .1rem solid Black;
+  border-left: .1rem solid Black;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header .search-bar-container.active{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .search-bar-container #search-bar{
+  width:100%;
+  padding:1rem;
+  text-transform: none;
+  color:black;
+  font-size: 1.7rem;
+  border-radius: .5rem;
+}
+
+header .search-bar-container label{
+  color:Black;
+  cursor: pointer;
+  font-size: 3rem;
+  margin-left: 1.5rem;
+}
+
+header .search-bar-container label:hover{
+  color:#696969;
+}
+
+#menu-btn{
+    font-size: 3rem;
+    color:black;
+    cursor: pointer;
+    display: none;
+}
+
+.login-form-container{
+  position: fixed;
+  top:-120%; left: 0;
+  z-index: 10000;
+  min-height: 100vh;
+  width:100%;
+  background:rgba(0,0,0,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form-container.active{
+  top:0;
+}
+
+.login-form-container form{
+  margin:2rem;
+  padding:1.5rem 2rem;
+  border-radius: .5rem;
+  background:#fff;
+  width:50rem;
+}
+
+.login-form-container form h3{
+  font-size: 3rem;
+  color:#444;
+  text-transform: uppercase;
+  text-align: center;
+  padding:1rem 0;
+}
+
+.login-form-container form .box{
+  width:100%;
+  padding:1rem;
+  font-size: 1.7rem;
+  color:#333;
+  margin:.6rem 0;
+  border:.1rem solid rgba(0,0,0,.3);
+  text-transform: none;
+}
+
+.login-form-container form .box:focus{
+  border-color: var(--orange);;
+}
+
+.login-form-container form #remember{
+  margin:2rem 0;
+}
+
+.login-form-container form label{
+  font-size: 1.5rem;
+}
+
+.login-form-container form .btn{
+  display: block;
+  width:100%;
+}
+
+.login-form-container form p{
+  padding:.5rem 0;
+  font-size: 1.5rem;
+  color:#666;
+}
+
+.login-form-container form p a{
+  color:var(--orange);
+}
+
+.login-form-container form p a:hover{
+  color:#333;
+  text-decoration: underline;
+}
+
+.login-form-container #form-close{
+  position: absolute;
+  top:2rem; right:3rem;
+  font-size: 5rem;
+  color:#fff;
+  cursor: pointer;
+}
+
+.footer{
+    background-color: #E8E8E8;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    /*color:var(--main-color);*/
+    color: black;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding:1rem 0;
+    /*color:var(--main-color);*/
+    color: black;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .credit{
+    text-align: center;
+    font-size: 2rem;
+    padding:0rem 0rem;
+    margin-top: 1rem;
+    /*color:var(--main-color);*/
+    color: black;
+}
+
+.footer .credit span{
+    border-bottom: var(--border-hover);
+    font-size: 1.5rem;
+}
+
+.footer .box-container .box .cabout .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.6rem;
+}
+
+.footer .box-container .box .aboutuspage .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.6rem;
+}
+
+.footer .box-container .box .capabout .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.6rem;
+}
+
+
+
+/* End of Old CSS */
+
+@media(max-width:1920px){
+  #menu-btn{
+        display: initial;
+    }
+  
+  #menu-btn.fa-times{
+        transform:rotate(180deg);
+    }
+  
+    .header .navbar{
+        position: absolute;
+        top:100%; left:0; right:75%;
+        background-color: #E8E8E8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        font-size: 2.2rem;
+        margin:0;
+        padding:1rem 6rem;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:60%;
+        background-color: #E8E8E8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .navbar a{
+        display: block;
+        font-size: 2.2rem;
+        margin:0;
+        padding:1.5rem 6rem;
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background-color: #E8E8E8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background-color: #E8E8E8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  
+  .header{
+        /*padding:2rem;*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+    .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background-color: #E8E8E8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
